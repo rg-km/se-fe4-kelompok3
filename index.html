@@ -11,31 +11,66 @@
         
         h1.title {
             position: center;
-            top: 40px;
+            top: 70px;
             left: 30%;
         }
         
-        h3 {
+        h3.score {
+            font-size: 17px;
             position: absolute;
-            left: 40%;
+            top: 59%;
+            left: 60%;
+        }
+        
+        h3.nyawa {
+            font-size: 17px;
+            position: absolute;
+            top: 59%;
+            left: 63.5%;
+        }
+        
+        h3.level {
+            font-size: 17px;
+            position: absolute;
+            top: 59%;
+            left: 67.5%;
+        }
+        
+        img#snake_head_right {
+            display: none;
+        }
+        
+        img#snake_head_left {
+            display: none;
+        }
+        
+        img#snake_head_up {
+            display: none;
+        }
+        
+        img#snake_head_down {
+            display: none;
         }
     </style>
 
 </head>
 
 <body onload="draw();">
- 
+
     <h1 class=" title">SnakeGame</h1>
     <!-- Board -->
     <canvas id="snakeBoard" width="400" height="400" style="border:1px solid #000000;"></canvas>
     <!-- Scoreboard-->
-    <h3> Score </h3>
+    <h3 class="score"> Score </h3>
     <canvas id="score1Board" width="40" height="40" style="border:1px solid #000000;"></canvas>
-    <h3> nyawaBoard </h3>
+    <h3 class="nyawa"> nyawa </h3>
     <canvas id="nyawaBoard" width="40" height="40" style="border:1px solid #000000;"></canvas>
-    <h3> level </h3>
+    <h3 class="level"> level </h3>
     <canvas id="level" width="40" height="40" style="border:1px solid #000000;"></canvas>
-
+    <img id="snake_head_right" src="img/Head-Snake-kanan.png">
+    <img id="snake_head_left" src="img/Head-Snake-kiri.png">
+    <img id="snake_head_down" src="img/Head-Snake-bawah.png">
+    <img id="snake_head_up" src="img/Head-Snake-atas.png">
     <script type="text/javascript" src="index.js"></script>
 </body>
 
