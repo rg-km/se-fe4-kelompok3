@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>Snake Game</title>
+    <style>
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
+        
+        i.material-icon {
+            color: #FF9BE9;
+        }
+        /* emojione:flag-for-indonesia */
+        
+        span.iconify {
+            position: absolute;
+            width: 108px;
+            height: 108px;
+            left: 1209px;
+            top: 56px;
+        }
+        
+        h1 {
+            text-decoration: none;
+            font-size: 70px;
+            position: absolute;
+            width: 200px;
+            height: 70px;
+            border-radius: 10%;
+            left: 150px;
+            top: 15px;
+            color: #ffff;
+        }
+        
+        h4 {
+            font-size: 30px;
+            position: absolute;
+            left: 15px;
+            top: 150px;
+            color: #ffff;
+        }
+        
+        img.kepala {
+            position: absolute;
+            left: 260px;
+            top: 140px;
+        }
+        
+        img.badan1 {
+            position: absolute;
+            left: 200px;
+            top: 140px;
+            transform: rotate(90 + 90deg);
+        }
+        
+        img.badan2 {
+            position: absolute;
+            left: 200px;
+            top: 200px;
+            transform: rotate(270deg);
+        }
+        
+        img.arrow1 {
+            position: absolute;
+            left: 48%;
+            top: 91%;
+            transform: rotate(-180deg);
+        }
+        
+        img.arrow2 {
+            position: absolute;
+            left: 1%;
+            top: 91%;
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+<img src="img/ground1.png" width="700" height="650">
+<img class="kepala" src="img/Head-Snake-kanan.png" width="70" height="50">
+<img class="badan1" src="img/Body-Snake.png" width="50" height="50">
+<img class="badan2" src="img/Body-Snake.png" width="50" height="50">
+<a href="ruleshealth.html"><img class="arrow1" src="img/arrow.png" width="53" height="53"></a>
+<a href="rulesapel.html"> <img class="arrow2" src="img/arrow.png" width="53" height="53"></a>
+<canvas id="snake" width="400" height="400"></canvas>
+
+<div id="snake">
+    <h1> Snake </h1>
+    <h4>
+        snake is a object you can move this object <br> using arrow such as : up, bottom, right, and left <br> this snake can be longer if eat a food or apple <br>
+    </h4>
+</div>
+
+
+
+
+</html>

@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Playfair+Display:ital,wght@0,400;1,700&display=swap');
+        body {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        h1.title {
+            position: center;
+            top: 40px;
+            left: 30%;
+        }
+        
+        h3 {
+            position: absolute;
+            left: 40%;
+        }
+    </style>
+
+</head>
+
+<body onload="draw();">
+
+    <h1 class=" title">SnakeGame</h1>
+    <!-- Board -->
+    <canvas id="snakeBoard" width="400" height="400" style="border:1px solid #000000;"></canvas>
+    <!-- Scoreboard-->
+    <h3> Score </h3>
+    <canvas id="score1Board" width="40" height="40" style="border:1px solid #000000;"></canvas>
+    <h3> nyawaBoard </h3>
+    <canvas id="nyawaBoard" width="40" height="40" style="border:1px solid #000000;"></canvas>
+    <h3> level </h3>
+    <canvas id="level" width="40" height="40" style="border:1px solid #000000;"></canvas>
+
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>

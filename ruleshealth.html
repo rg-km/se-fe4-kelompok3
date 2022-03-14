@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>Snake Game</title>
+    <style>
+        canvas {
+            display: block;
+        }
+        
+        i.material-icon {
+            color: #FF9BE9;
+        }
+        /* emojione:flag-for-indonesia */
+        
+        span.iconify {
+            position: absolute;
+            width: 108px;
+            height: 108px;
+            left: 1209px;
+            top: 56px;
+        }
+        
+        h1 {
+            text-decoration: none;
+            font-size: 70px;
+            position: absolute;
+            width: 200px;
+            height: 70px;
+            border-radius: 10%;
+            left: 150px;
+            top: 15px;
+            color: #ffff;
+        }
+        
+        h4 {
+            font-size: 30px;
+            position: absolute;
+            left: 15px;
+            top: 150px;
+            color: #ffff;
+        }
+        
+        img.appel1 {
+            position: absolute;
+            left: 100px;
+            top: 350px;
+        }
+        
+        img.appel2 {
+            position: absolute;
+            left: 25%;
+            top: 25%;
+        }
+        
+        p.life {
+            font-size: 90px;
+            position: absolute;
+            left: 700px;
+            top: 200px;
+        }
+        
+        img.arrow1 {
+            position: absolute;
+            left: 48%;
+            top: 91%;
+            transform: rotate(-180deg);
+        }
+        
+        img.arrow2 {
+            position: absolute;
+            left: 1%;
+            top: 91%;
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+
+<img src="img/ground1.png" width="700" height="650">
+<img class="appel1" src="img/heart.png" width="53" height="53">
+<img class="appel2" src="img/heart.png" width="53" height="53">
+<a href="rintangan.html"><img class="arrow1" src="img/arrow.png" width="53" height="53"></a>
+<a href="rulessnake.html"> <img class="arrow2" src="img/arrow.png" width="53" height="53"></a>
+<canvas id="health" width="400" height="400"></canvas>
+<h1> Health </h1>
+<h4>
+    Health will keep your snake alive if it hits obstacles <br> <br> this life will appear when prime numbers <br> <br> like 2 3 5 7 and so on
+</h4>
+
+
+</html>
