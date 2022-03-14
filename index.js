@@ -60,7 +60,7 @@ function initSnake(color) {
         ...initHeadAndBody(),
         direction: initDirection(),
         score: 0,
-        hp: 0,
+        hp: 3,
         level: 0,
     }
 }
@@ -137,14 +137,40 @@ function draw() {
     setInterval(function() {
         let snakeCanvas = document.getElementById("snakeBoard");
         let ctx = snakeCanvas.getContext("2d");
-
+        const sameDirections = {
+            [DIRECTION.LEFT]: DIRECTION.RIGHT,
+            [DIRECTION.RIGHT]: DIRECTION.LEFT,
+            [DIRECTION.DOWN]: DIRECTION.UP,
+            [DIRECTION.UP]: DIRECTION.DOWN,
+        }
         ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
 
-        drawapple(KepalaUlar, ctx, snake1.head.x, snake1.head.y);
-        for (let i = 1; i < snake1.body.length; i++) {
-            drawapple(BadanUlar, ctx, snake1.body[i].x, snake1.body[i].y);
+        if (snake1.direction == sameDirections[0]) {
+            let img_snake1 = document.getElementById("snake_head_right");
+            ctx.drawImage(img_snake1, snake1.head.x * CELL_SIZE, snake1.head.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+            for (let i = 1; i < snake1.body.length; i++) {
+                drawapple(BadanUlar, ctx, snake1.body[i].x, snake1.body[i].y);
+            }
+        } else if (snake1.direction == sameDirections[1]) {
+            let img_snake2 = document.getElementById("snake_head_left");
+            ctx.drawImage(img_snake2, snake1.head.x * CELL_SIZE, snake1.head.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+            for (let i = 1; i < snake1.body.length; i++) {
+                drawapple(BadanUlar, ctx, snake1.body[i].x, snake1.body[i].y);
+            }
+        } else if (snake1.direction == sameDirections[2]) {
+            let img_snake3 = document.getElementById("snake_head_down");
+            ctx.drawImage(img_snake3, snake1.head.x * CELL_SIZE, snake1.head.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+            for (let i = 1; i < snake1.body.length; i++) {
+                drawapple(BadanUlar, ctx, snake1.body[i].x, snake1.body[i].y);
+            }
+        } else if (snake1.direction == sameDirections[3]) {
+            let img_snake4 = document.getElementById("snake_head_up");
+            ctx.drawImage(img_snake4, snake1.head.x * CELL_SIZE, snake1.head.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+            for (let i = 1; i < snake1.body.length; i++) {
+                drawapple(BadanUlar, ctx, snake1.body[i].x, snake1.body[i].y);
+            }
         }
-
+        //apel
         drawapple(appleImage, ctx, apple1.position.x, apple1.position.y);
         drawapple(appleImage, ctx, apple2.position.x, apple2.position.y);
         for (let i = 0; i < obstacles.length; i++) {
@@ -193,30 +219,30 @@ function update(snake1) {
     }
 
     obstacles.push(row)
-    snake1.hp = snake1.hp + 1
+        //snake
+    snake1.level = snake1.level + 1
     console.log(obstacles)
 }
 
 
 function eat(snake, apple) {
-    if (snake.head.x == apple.position.x && snake.head.y == apple.position.y) {
-        apple.position = initPosition();
 
+    if (snake.head.x == apple.position.x && snake.head.y == apple.position.y) {
+        apple.position = initPosition()
+        snake.score++
+            snake.body.push({ x: snake.head.x, y: snake.head.y })
         makan.play();
-        snake.score++;
-        snake.level++;
-        snake.body.push({ x: snake.head.x, y: snake.head.y });
-        update(snake);
+        update(snake)
         if (snake.score % 5 === 0) {}
     } else if (
-        snake.head.x == apple.position.x && snake.head.y == apple.position.y) {
-        apple.position = initPosition()
+        snake.head.x == apple1.position.x && snake.head.y == apple1.position.y
+    ) {
+        apple1.position = initPosition()
         snake.score++
             snake.body.push({ x: snake.head.x, y: snake.head.y })
         update(snake)
         if (snake.score % 5 === 0) {}
     }
-
 }
 
 function eatNyawa(snake, nyawa) {
